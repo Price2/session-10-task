@@ -7,13 +7,24 @@ $('#myForm').submit(function(e) {
     console.log(input.length-1)
 
 
-    var values = {};
+    var values = [];
+    var form_obj = {}
     for( var i=0;i< input.length-1; i++) {
         console.log(input[i].name)
-        values[input[i].name] = $(input[i]).val();
+        form_obj[input[i].name] = $(input[i]).val();
     }
-
-    localStorage.setItem('form-submission', JSON.stringify(values));
+    
+    if(localStorage.getItem('form') == null)
+    {
+        values.push(form_obj);
+        localStorage.setItem('form', JSON.stringify(values));
+    }
+    else{
+       var existing_form = JSON.parse(localStorage.getItem('form'));
+       existing_form.push(form_obj);
+       localStorage.setItem('form', JSON.stringify(existing_form));
+    }
+    console.log(existing_form);
 
 
 });
