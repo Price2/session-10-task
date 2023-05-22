@@ -1,7 +1,3 @@
-body{
-    background-color: #1d2029;
-}
-
 .background-shadow{
 
     background-color: #20222f; 
@@ -10,7 +6,48 @@ body{
     border-radius: 0px 0px 25px 25px;
 
 }
+
+.body-dark{
+    background-color: #1d2029;
+}
+
+.background-light{
+    background-color: #f8f9fe; 
+    height:250px; 
+    margin-bottom:-212px;
+    border-radius: 0px 0px 25px 25px;
+}
+
 .upper-border{
-    border-top: 5px solid #198ff5;
+    border-top: 5px solid;
+    border-image:  linear-gradient(to right,
+    #FAB86E , #E9877C, #DD5391) 1 0 0 0 ;
+
     border-radius: 6px;
 }
+
+.card-color-toggle-dark{
+    background-color:#252b43;
+}
+
+.card-color-toggle-light{
+    background-color: #f0f3fa;
+}
+
+.fa-instagram{
+    &:before{
+        background: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);
+        font-size: 35px;
+        background-clip: text;
+    -webkit-text-fill-color: transparent;
+    }
+}
+
+
+// @media only screen and (max-width: 760px) {
+//     hr { 
+//         display: block;
+//         border: 1px solid red;
+
+//      }
+//   }

@@ -1,19 +1,16 @@
 $(document).ready(function () {
 });
 $('#myForm').submit(function(e) {
-    e.preventDefault();
-    debugger;
-    var input = $('#myForm > *');
-    console.log(input.length-1)
+    // debugger;
+    var input = $('input, select');
 
 
     var values = [];
     var form_obj = {}
-    for( var i=0;i< input.length-1; i++) {
+    for( var i=0;i< input.length; i++) {
         console.log(input[i].name)
         form_obj[input[i].name] = $(input[i]).val();
-    }
-    
+    }    
     if(localStorage.getItem('form') == null)
     {
         values.push(form_obj);
@@ -24,7 +21,6 @@ $('#myForm').submit(function(e) {
        existing_form.push(form_obj);
        localStorage.setItem('form', JSON.stringify(existing_form));
     }
-    console.log(existing_form);
 
 
 });
